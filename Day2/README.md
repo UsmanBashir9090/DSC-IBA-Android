@@ -153,6 +153,92 @@ Set the top constraint of this EditText to the bottom of the previous EditText. 
 
 And there you go! Our front end layout is complete.
 
+# Run App
+
+We now Run the app to see how it appears on our mobile device. 
+To run an app, choose the device you want to run it on and then press the play icon beside it.
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/checkResults.png)
+
+
+# Back End:
+
+We now declare a button variable and 2 EditText variables with respect to our front end layout.
+
+To move to the backend layout go to project panel on the left and then **app -> src -> main -> java -> com -> example -> YourApplicationName -> MainActivity**.
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/gotoBackend.png)
+
+Next we declare the variables under the public class, but above the onCreate method.
+```
+Button pressME;
+EditText firstName;
+EditText lastName;
+```
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/declareVariables.png)
+
+
+Next, in the **onCreate** method, we initialise these variables.
+```
+  pressMe = findViewById(R.id.myButton);
+  firstName = (EditText) findViewById(R.id.firstName);
+  lastName = (EditText) findViewById(R.id.lastName);
+
+```
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/initialiseVariables.png)
+
+Great!
+
+Now we move on to adding functions to our front end. What happens when a user pressed the button?
+
+In this tutorial, we want the first name and the last name to be displayed on the app whenever the button is pressed.
+For displaying the name, we use a toast. Toasts display information for a short period of time, and then disappear.
+
+We first create an onClick Method for the button
+```
+pressMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+```
+
+When writing View.OnClickListener, press enter on the provided hint by the IDE to automatically create this method.
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/setOnClickListener.png)
+
+
+Next we add a toast in the following way:
+
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/chooseCorrectToast.png)
+
+We want our toast to display the names given to us as input in the form. Therefore in the 'text: ""' we add our EditText variables in the string format.
+
+>  Toast.makeText(MainActivity.this, "Name is " + firstName.getText().toString() +" - " + lastName.getText().toString(), Toast.LENGTH_SHORT).show();
+    
+First we added a 'Name is ' String. Next we concatenate with it, the string input we have recevied in our editText "First Name". We do this by 'firstName.getText().toString()'. 
+
+We do the same for the last name.
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/completingToast.png)
+
+Perfect!
+
+We have now created our own front-end layout and connected it to the backend as well.
+Lets now run the application and check how we've done.
+
+
+![alt-text](https://github.com/UsmanBashir9090/DSC-IBA-Android/blob/main/Day2/testRunActivity.png)
+
+
+## Congratulations!
+
+
+
+
+
 
 
 
